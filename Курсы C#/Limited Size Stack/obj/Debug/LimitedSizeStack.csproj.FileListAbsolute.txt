@@ -1,0 +1,10 @@
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\bin\Debug\TodoApplication.exe.config
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\bin\Debug\TodoApplication.exe
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\bin\Debug\TodoApplication.pdb
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\bin\Debug\nunit.framework.dll
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\LimitedSizeStack.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\TodoApplication.Properties.Resources.resources
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\LimitedSizeStack.csproj.GenerateResource.cache
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\LimitedSizeStack.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\TodoApplication.exe
+C:\Учеба\2 курс\Курсы C#\Limited Size Stack\obj\Debug\TodoApplication.pdb

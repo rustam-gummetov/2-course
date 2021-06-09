@@ -1,0 +1,6 @@
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\obj\Debug\KizhiPart2.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\bin\Debug\KizhiPart2.exe.config
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\bin\Debug\KizhiPart2.exe
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\bin\Debug\KizhiPart2.pdb
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\obj\Debug\KizhiPart2.exe
+C:\Учеба\2 курс\Курсы C#\KizhiPart2\obj\Debug\KizhiPart2.pdb

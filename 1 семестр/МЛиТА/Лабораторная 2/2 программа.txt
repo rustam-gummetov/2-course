@@ -1,0 +1,159 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            int N = Convert.ToInt32(Math.Pow(2, n));
+            int S = 0;
+            string str = Console.ReadLine();
+            if (n == 1 && str == "11")
+                Console.WriteLine("СКНФ не существует");
+            else if (n == 2 && str == "1111")
+                Console.WriteLine("СКНФ не существует");
+            else if (n == 3 && str == "11111111")
+                Console.WriteLine("СКНФ не существует");
+            else if (n == 4 && str == "1111111111111111")
+                Console.WriteLine("СКНФ не существует");
+            else if (n == 5 && str == "11111111111111111111111111111111")
+                Console.WriteLine("СКНФ не существует");
+            else
+            {
+                if (n == 1)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '0')
+                        {
+                            if (S != 0)
+                                Console.Write(" v ");
+                            if (i == 0)
+                                Console.Write('X');
+                            else
+                                Console.Write('x');
+                            S++;
+                        }
+                    }
+                }
+                else if (n == 2)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '0')
+                        {
+                            Console.Write("(");
+                            if (i < 2)
+                                Console.Write('X');
+                            else
+                                Console.Write('x');
+                            Console.Write(" v ");
+                            if (i % 2 == 0)
+                                Console.Write('Y');
+                            else
+                                Console.Write('y');
+                            Console.Write(")");
+                        }
+                    }
+                }
+                else if (n == 3)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '0')
+                        {
+                            Console.Write("(");
+                            if (i < 4)
+                                Console.Write('X');
+                            else
+                                Console.Write('x');
+                            Console.Write(" v ");
+                            if (i == 0 || i == 1 || i == 4 || i == 5)
+                                Console.Write('Y');
+                            else
+                                Console.Write('y');
+                            Console.Write(" v ");
+                            if (i % 2 == 0)
+                                Console.Write('Z');
+                            else
+                                Console.Write('z');
+                            Console.Write(")");
+                        }
+                    }
+                }
+                else if (n == 4)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '0')
+                        {
+                            Console.Write("(");
+                            if (i < 8)
+                                Console.Write('A');
+                            else
+                                Console.Write('a');
+                            Console.Write(" v ");
+                            if ((i > 3 && i < 8) || i > 11)
+                                Console.Write('B');
+                            else
+                                Console.Write('b');
+                            Console.Write(" v ");
+                            if (i == 2 || i == 3 || i == 6 || i == 7 || i == 10 || i == 11 || i == 14 || i == 15)
+                                Console.Write('c');
+                            else
+                                Console.Write('C');
+                            Console.Write(" v ");
+                            if (i % 2 == 0)
+                                Console.Write('D');
+                            else
+                                Console.Write('d');
+                            Console.Write(")");
+                        }
+                    }
+                }
+                else if (n == 5)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '0')
+                        {
+                            Console.Write("(");
+                            if (i < 16)
+                                Console.Write('A');
+                            else
+                                Console.Write('a');
+                            Console.Write(" v ");
+                            if (i < 8 || (i > 15 && i < 24))
+                                Console.Write('B');
+                            else
+                                Console.Write('b');
+                            Console.Write(" v ");
+                            if ((i > 3 && i < 8) || (i > 11 && i < 16) || (i > 19 && i < 24) || i > 27)
+                                Console.Write('c');
+                            else
+                                Console.Write('C');
+                            Console.Write(" v ");
+                            if (i % 4 == 0 || (i - 1) % 4 == 0)
+                                Console.Write('D');
+                            else
+                                Console.Write('d');
+                            Console.Write(" v ");
+                            if (i % 2 == 0)
+                                Console.Write('E');
+                            else
+                                Console.Write('e');
+                            Console.Write(")");
+                        }
+                    }
+                }
+            }          
+            Console.ReadKey();
+        }
+    }
+}

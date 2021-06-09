@@ -1,0 +1,109 @@
+using System;
+
+namespace ConsoleApp16
+{
+    public class ResidentialFacility      //жилой
+    {
+        public string Address;
+        public int Number;
+        public int Floors;
+    }
+
+    public class NonResidentialFacility   //нежилой
+    {
+        public string Address;
+        public int Number;
+        public double Area;
+    }
+
+    public class Multistory : ResidentialFacility  //многоэтажный
+    {
+        public int CountApartment;
+    }
+
+    public class Apartment : Multistory
+    {
+        public int Floor;
+        public int ApartmentNumber;
+        public double ApartmentArea;
+        public int CountRoom;
+        public double LivingArea;
+        public double BathroomArea;
+        public double HallwayArea;
+    }
+
+    public class PrivateHouse : ResidentialFacility  //частный дом
+    {
+        public double HouseArea;
+        public bool Garage;
+        public double GarageArea;
+        public bool Basement;
+        public double BasementArea;
+        public double BasementHeight;
+    }
+
+    public class GardenHouse : ResidentialFacility   //садовый дом
+    {
+        public double HouseArea;
+        public bool Barn;
+        public double BarnArea;
+        public double BarnHeight;
+        public string BarnBuildingMaterial;
+        public bool Bathhouse;
+        public double BathhouseArea;
+    }
+
+    //public class Basement : GardenHouse
+    //{
+    //    public int Height;
+    //    public double GroundTemperature;
+    //}
+
+    //public class Garage : NonResidentialFacility
+    //{
+    //    public string Level;
+    //    public int Floors;
+    //}
+
+    public class Warehouse : NonResidentialFacility
+    {
+        public int Height;
+    }
+
+    public class Shop : NonResidentialFacility
+    {
+        public string Specialization;
+    }
+
+    public class Bank : NonResidentialFacility
+    {
+        public string Territorial;        //(региональный, национальный и тд)
+        public string Property;           //(государственный или частный)
+    }
+  
+    //public class Bathhouse : NonResidentialFacility
+    //{
+    //    public string Type;
+    //    public double Temperature;
+    //}
+
+    //public class Barn : NonResidentialFacility
+    //{
+    //    public string BuildingMaterial;
+    //    public int Height;
+    //}
+
+    //public class Coop : NonResidentialFacility
+    //{
+    //    public string DesignType;  //(закрытый или открытый)
+    //    public string Seasonality;
+    //}
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}

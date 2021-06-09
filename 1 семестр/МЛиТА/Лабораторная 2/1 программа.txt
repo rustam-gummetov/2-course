@@ -1,0 +1,197 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            int N = Convert.ToInt32(Math.Pow(2, n));
+            int S = 0;
+            string str = Console.ReadLine();
+            if (n == 1 && str == "00")
+                Console.WriteLine("СДНФ не существует");
+            else if (n == 2 && str == "0000")
+                Console.WriteLine("СДНФ не существует");
+            else if (n == 3 && str == "00000000")
+                Console.WriteLine("СДНФ не существует");
+            else if (n == 4 && str == "0000000000000000")
+                Console.WriteLine("СДНФ не существует");
+            else if (n == 5 && str == "00000000000000000000000000000000")
+                Console.WriteLine("СДНФ не существует");
+            else
+            {
+                if (n == 1)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '1')
+                        {
+                            if (S == 0)
+                            {
+                                if (i == 0)
+                                    Console.Write('x');
+                                else
+                                    Console.Write('X');
+                            }
+                            else
+                            {
+                                if (i == 0)
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write('x');
+                                }
+                                else
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write('X');
+                                }
+                            }
+                            S++;
+                        }
+                    }
+                }
+                else if (n == 2)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '1')
+                        {
+                            if (i == 0)
+                            {
+                                if (S == 0)
+                                    Console.Write("xy");
+                                else
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write("xy");
+                                }
+                            }
+                            else if (i == 1)
+                            {
+                                if (S == 0)
+                                    Console.Write("xY");
+                                else
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write("xY");
+                                }
+                            }
+                            else if (i == 2)
+                            {
+                                if (S == 0)
+                                    Console.Write("Xy");
+                                else
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write("Xy");
+                                }
+                            }
+                            else if (i == 3)
+                            {
+                                if (S == 0)
+                                    Console.Write("XY");
+                                else
+                                {
+                                    Console.Write(" v ");
+                                    Console.Write("XY");
+                                }
+                            }
+                            S++;
+                        }
+                    }
+                }
+                else if (n == 3)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '1')
+                        {
+                            if (S != 0)
+                                Console.Write(" v ");
+                            if (i > 3)
+                                Console.Write('X');
+                            else
+                                Console.Write('x');
+                            if (i == 2 || i == 3 || i == 6 || i == 7)
+                                Console.Write('Y');
+                            else
+                                Console.Write('y');
+                            if (i % 2 == 1)
+                                Console.Write('Z');
+                            else
+                                Console.Write('z');
+                            S++;
+                        }
+                    }
+                }
+                else if (n == 4)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '1')
+                        {
+                            if (S != 0)
+                                Console.Write(" v ");
+                            if (i > 7)
+                                Console.Write('A');
+                            else
+                                Console.Write('a');
+                            if ((i > 4 && i < 8) || i > 11)
+                                Console.Write('B');
+                            else
+                                Console.Write('b');
+                            if (i == 2 || i == 3 || i == 6 || i == 7 || i == 10 || i == 11 || i == 14 || i == 15)
+                                Console.Write('C');
+                            else
+                                Console.Write('c');
+                            if (i % 2 == 1)
+                                Console.Write('D');
+                            else
+                                Console.Write('d');
+                            S++;
+                        }
+                    }
+                }
+                else if (n == 5)
+                {
+                    for (int i = 0; i < N; i++)
+                    {
+                        if (str[i] == '1')
+                        {
+                            if (S != 0)
+                                Console.Write(" v ");
+                            if (i > 16)
+                                Console.Write('A');
+                            else
+                                Console.Write('a');
+                            if ((i > 7 && i < 17) || i > 23)
+                                Console.Write('B');
+                            else
+                                Console.Write('b');
+                            if ((i > 3 && i < 8) || (i > 11 && i < 16) || (i > 19 && i < 24) || i > 27)
+                                Console.Write('C');
+                            else
+                                Console.Write('c');
+                            if ((i % 2 == 0 && i % 4 != 0) || ((i + 1) % 4 == 0))
+                                Console.Write('D');
+                            else
+                                Console.Write('d');
+                            if (i % 2 == 1)
+                                Console.Write('E');
+                            else
+                                Console.Write('e');
+                            S++;
+                        }
+                    }
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}

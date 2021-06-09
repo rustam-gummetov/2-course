@@ -1,0 +1,137 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 10, k = 0, S = 0;
+            bool key = false;
+            string[] str = new string[k];
+            while (n < 1 || n > 5)
+            {
+                Console.Clear();
+                n = Convert.ToInt32(Console.ReadLine());
+                S = S + 2;
+            }
+            S++;
+            string znach = Console.ReadLine();
+            S++;
+            if (znach.Length != (int)Math.Pow(2, n))
+            {
+                Console.WriteLine("¬ведено неверное колличество значений функции");
+                goto end;
+            }
+            for (int i = 0; i < (int)Math.Pow(2, n); i++)
+                if (Convert.ToInt32(znach[i]) < 49 && Convert.ToInt32(znach[i]) > 50)
+                {
+                    Console.WriteLine("¬ведены недопустимые значени€ функции");
+                    goto end;
+                }
+            for (int i = 0; i < (int)Math.Pow(2, n); i++)
+                if (znach[i] == '1')
+                {
+                    k++;
+                    Array.Resize<string>(ref str, k);
+                    char[] chars = Convert.ToString(i, 2).PadLeft(n, '0').ToCharArray();
+                    for (int j = 0; j < n; j++)
+                    {
+                        if (chars[j] == '0')
+                            chars[j] = Convert.ToChar(97 + j);
+                        if (chars[j] == '1')
+                            chars[j] = Convert.ToChar(65 + j);
+                    }
+                    string strr = new string(chars);
+                    str[k - 1] = strr;
+                }
+            while (!key)
+            {
+                key = true;
+                string[] ptr = new string[0];
+                int[] reuse = new int[str.Length];
+                for (int l = 0; l < reuse.Length; l++)
+                    reuse[l] = 0;
+                for (int i = 0; i < str.Length; i++)
+                {
+                    for (int j = i + 1; j < str.Length; j++)
+                    {
+                        if (str[i].Length == str[j].Length)
+                        {
+                            int sbnr = 20, sbcnt = 0, sbcntt = 0;
+                            char[] charsi = str[i].ToCharArray();
+                            char[] charsj = str[j].ToCharArray();
+                            for (int l = 0; l < charsi.Length; l++)
+                            {
+                                if (Convert.ToInt32(charsi[l]) - Convert.ToInt32(charsj[l]) == 32)
+                                {
+                                    sbnr = l;
+                                    sbcnt++;
+                                }
+                                if (charsi[l] == charsj[l])
+                                    sbcntt++;
+                            }
+                            sbcntt++;
+                            if (sbcnt == 1 && sbcntt == charsi.Length)
+                            {
+                                for (int u = sbnr; u < charsi.Length - 1; u++)
+                                    charsi[u] = charsi[u + 1];
+                                reuse[i] = 1;
+                                reuse[j] = 1;
+                                key = false;
+                                Array.Resize<char>(ref charsi, charsi.Length - 1);
+                            }
+                            string strr = new string(charsi);
+                            if (ptr.Length == 0 && !key)
+                            {
+                                Array.Resize<string>(ref ptr, 1);
+                                ptr[0] = strr;
+                                key = true;
+                            }
+                            if (ptr.Length != 0 && !key)
+                            {
+                                for (int e = 0; e < ptr.Length; e++)
+                                    if (ptr[e] == strr)
+                                        key = true;
+                                if (!key)
+                                {
+                                    Array.Resize<string>(ref ptr, ptr.Length + 1);
+                                    ptr[ptr.Length - 1] = strr;
+                                    key = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i < reuse.Length; i++)
+                {
+                    if (reuse[i] == 0)
+                    {
+                        Array.Resize<string>(ref ptr, ptr.Length + 1);
+                        ptr[ptr.Length - 1] = str[i];
+                    }
+                    if (reuse[i] == 1)
+                        key = false;
+                }
+                Array.Resize<string>(ref str, ptr.Length);
+                for (int i = 0; i < ptr.Length; i++)
+                    str[i] = ptr[i];
+                S++;
+            }
+            Console.MoveBufferArea(0, S, Console.BufferWidth, 1, Console.BufferWidth, S, ' ', Console.ForegroundColor, Console.BackgroundColor);
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (!key)
+                    Console.Write(" v ");
+                key = false;
+                Console.Write(str[i]);
+            }
+        end:
+            Console.Read();
+        }
+    }
+}

@@ -1,0 +1,7 @@
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\bin\Debug\eurobot.bmp
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\bin\Debug\Recognizer.exe.config
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\bin\Debug\Recognizer.exe
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\bin\Debug\Recognizer.pdb
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\obj\Debug\Recognizer.exe
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\obj\Debug\Recognizer.pdb
+C:\Учеба\2 курс\Курсы C#\Оттенки серого\obj\Debug\Image.csprojAssemblyReference.cache

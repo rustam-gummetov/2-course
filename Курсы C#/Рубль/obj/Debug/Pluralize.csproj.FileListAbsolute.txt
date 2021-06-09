@@ -1,0 +1,7 @@
+C:\Учеба\2 курс\Курсы C#\Рубль\bin\Debug\rubles.txt
+C:\Учеба\2 курс\Курсы C#\Рубль\bin\Debug\Pluralize.exe.config
+C:\Учеба\2 курс\Курсы C#\Рубль\bin\Debug\Pluralize.exe
+C:\Учеба\2 курс\Курсы C#\Рубль\bin\Debug\Pluralize.pdb
+C:\Учеба\2 курс\Курсы C#\Рубль\obj\Debug\Pluralize.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Рубль\obj\Debug\Pluralize.exe
+C:\Учеба\2 курс\Курсы C#\Рубль\obj\Debug\Pluralize.pdb

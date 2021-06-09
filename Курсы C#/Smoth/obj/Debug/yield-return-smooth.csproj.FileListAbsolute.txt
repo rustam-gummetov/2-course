@@ -1,0 +1,9 @@
+C:\Учеба\2 курс\Курсы C#\Smoth\bin\Debug\yield.exe.config
+C:\Учеба\2 курс\Курсы C#\Smoth\bin\Debug\yield.exe
+C:\Учеба\2 курс\Курсы C#\Smoth\bin\Debug\yield.pdb
+C:\Учеба\2 курс\Курсы C#\Smoth\bin\Debug\nunit.framework.dll
+C:\Учеба\2 курс\Курсы C#\Smoth\bin\Debug\ZedGraph.dll
+C:\Учеба\2 курс\Курсы C#\Smoth\obj\Debug\yield-return-smooth.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Smoth\obj\Debug\yield-return-smooth.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Smoth\obj\Debug\yield.exe
+C:\Учеба\2 курс\Курсы C#\Smoth\obj\Debug\yield.pdb

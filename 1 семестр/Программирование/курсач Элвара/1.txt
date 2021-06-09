@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp4
+{
+    public partial class Form1 : Form
+    {
+        PictureBox pictureBox1 = new PictureBox();
+        static Bitmap flag = new Bitmap(1900, 1000);
+        Graphics flagGraphics = Graphics.FromImage(flag);
+        static public int m = 1;
+        Label size = new Label();
+        Label sizeField = new Label();
+        Button left = new Button();
+        Button right = new Button();
+
+        Label areaCountText = new Label();
+        TextBox areaCount = new TextBox();
+
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {      
+            size.Location = new Point(20, 20);
+            size.Size = new Size(400, 25);
+            size.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            size.Text = "Выберите размер поля";
+            Controls.Add(size);
+         
+            sizeField.Location = new Point(65, 75);
+            sizeField.Size = new Size(30, 30);
+            sizeField.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            sizeField.Text = "" + m;
+            Controls.Add(sizeField);
+                       
+            left.Location = new Point(20, 70);
+            left.Size = new Size(35, 35);
+            left.Text = "<";
+            Controls.Add(left);
+            left.Enabled = false;
+         
+            right.Location = new Point(100, 70);
+            right.Size = new Size(35, 35);
+            right.Text = ">";
+            Controls.Add(right);
+
+            left.Click += new EventHandler(Left_Click);
+            right.Click += new EventHandler(Right_Click);
+        }
+
+        public void Left_Click (object sender, EventArgs e)
+        {
+            m--;
+            if (m == 1)
+                left.Enabled = false;           
+            sizeField.Text = "" + m;
+            right.Enabled = true;
+        }
+
+        public void Right_Click (object sender, EventArgs e)
+        {
+            m++;
+            if (m == 10)
+                right.Enabled = false;            
+            sizeField.Text = "" + m;
+            left.Enabled = true;
+        }
+    }
+}

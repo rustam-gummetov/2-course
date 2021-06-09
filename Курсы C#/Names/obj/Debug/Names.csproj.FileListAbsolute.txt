@@ -1,0 +1,9 @@
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\names.txt
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\Names.exe.config
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\Names.exe
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\Names.pdb
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\ZedGraph.dll
+C:\Учеба\2 курс\Курсы C#\Names\bin\Debug\ZedGraph.xml
+C:\Учеба\2 курс\Курсы C#\Names\obj\Debug\Names.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Names\obj\Debug\Names.exe
+C:\Учеба\2 курс\Курсы C#\Names\obj\Debug\Names.pdb

@@ -1,0 +1,156 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp4
+{
+    public partial class Form1 : Form
+    {
+        PictureBox pictureBox1 = new PictureBox();
+        static Bitmap flag = new Bitmap(1900, 1000);
+        Graphics flagGraphics = Graphics.FromImage(flag);
+        Graphics formGraphics = Graphics.FromImage(flag);
+        static public int m = 1;
+        Label size = new Label();
+        Label sizeField = new Label();
+        Button left = new Button();
+        Button right = new Button();
+
+        Label areaCountText = new Label();
+        TextBox areaCount = new TextBox();
+        Button sendAreaCount = new Button();
+        static public int v = 1;
+
+        List<TextBox> textBoxes = new List<TextBox>();
+
+        Button sendDescriptionArea = new Button();
+
+        Pen BlackLine = new Pen(Color.Black, 1);
+        SolidBrush GreenBrush = new SolidBrush(Color.Green);
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            flagGraphics.DrawLine(BlackLine, 200, 200, 300, 300);
+            formGraphics.FillRectangle(GreenBrush, new Rectangle(200, 200, 19, 19));
+
+            size.Location = new Point(20, 20);
+            size.Size = new Size(400, 25);
+            size.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            size.Text = "Выберите размер поля";
+            Controls.Add(size);
+         
+            sizeField.Location = new Point(65, 75);
+            sizeField.Size = new Size(30, 30);
+            sizeField.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            sizeField.Text = "" + m;
+            Controls.Add(sizeField);
+                       
+            left.Location = new Point(20, 70);
+            left.Size = new Size(35, 35);
+            left.Text = "<";
+            Controls.Add(left);
+            left.Enabled = false;
+         
+            right.Location = new Point(100, 70);
+            right.Size = new Size(35, 35);
+            right.Text = ">";
+            Controls.Add(right);
+
+            left.Click += new EventHandler(Left_Click);
+            right.Click += new EventHandler(Right_Click);
+
+            areaCountText.Location = new Point(20, 120);
+            areaCountText.Size = new Size(400, 25);
+            areaCountText.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            areaCountText.Text = "Введите количество областей:";
+            Controls.Add(areaCountText);
+
+            areaCount.Location = new Point(20, 150);
+            areaCount.Size = new Size(25, 25);
+            areaCount.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            Controls.Add(areaCount);
+
+            sendAreaCount.Location = new Point(50, 150);
+            sendAreaCount.Size = new Size(150, 30);
+            sendAreaCount.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            sendAreaCount.Text = "Отправить";
+            Controls.Add(sendAreaCount);
+            sendAreaCount.Click += new EventHandler(SendAreaCount_Click);
+
+
+
+        }
+
+        public void Left_Click (object sender, EventArgs e)
+        {
+            m--;
+            if (m == 1)
+                left.Enabled = false;           
+            sizeField.Text = "" + m;
+            right.Enabled = true;
+        }
+
+        public void Right_Click (object sender, EventArgs e)
+        {
+            m++;
+            if (m == 10)
+                right.Enabled = false;            
+            sizeField.Text = "" + m;
+            left.Enabled = true;
+        }
+
+        public void SendAreaCount_Click(object sender, EventArgs e)
+        {          
+            v = Convert.ToInt32(areaCount.Text);
+            if (v > m * m)
+                return;
+            sendAreaCount.Enabled = false;
+
+            int x = 20;
+            int y = 150;
+
+            for (int i = 0; i < v; i++)
+            {
+                TextBox textBox = new TextBox();
+                textBox.Location = new Point(x, y + 35);
+                y += 35;
+                textBox.Size = new Size(200, 30);
+                textBox.Font = new Font(size.Font.Name, 14, size.Font.Style);
+                Controls.Add(textBox);
+                textBoxes.Add(textBox);
+            }
+
+            sendDescriptionArea.Location = new Point(x, y + 35);
+            sendDescriptionArea.Size = new Size(150, 30);
+            sendDescriptionArea.Font = new Font(size.Font.Name, 14, size.Font.Style);
+            sendDescriptionArea.Text = "Отправить";
+            Controls.Add(sendDescriptionArea);
+            sendDescriptionArea.Click += new EventHandler(SendDescriptionArea_Click);
+
+        }
+
+        public void SendDescriptionArea_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < textBoxes.Count; i++)
+            {
+                string[] numbers = textBoxes[i].Text.Split(' ');
+                int k = Convert.ToInt32(numbers[i]);
+                if (numbers.Length - 1 != k * 2)
+                    return;
+
+            }
+        }
+
+    }
+}

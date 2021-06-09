@@ -1,0 +1,15 @@
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\Images\Digger.png
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\Images\Gold.png
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\Images\Monster.png
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\Images\Sack.png
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\Images\Terrain.png
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\11-digger.exe.config
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\11-digger.exe
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\11-digger.pdb
+C:\Учеба\2 курс\Курсы C#\Digger\bin\Debug\nunit.framework.dll
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\Digger.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\Digger.Properties.Resources.resources
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\Digger.csproj.GenerateResource.cache
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\Digger.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\11-digger.exe
+C:\Учеба\2 курс\Курсы C#\Digger\obj\Debug\11-digger.pdb

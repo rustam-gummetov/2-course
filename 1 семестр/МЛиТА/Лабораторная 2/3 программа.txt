@@ -1,0 +1,202 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            string str = Console.ReadLine();
+            int N = Convert.ToInt32(Math.Pow(2, n));
+            if (n == 2)
+            {
+                if (str[0] == str[2] && str[1] == str[3])
+                    Console.WriteLine("x - фиктивна€ переменна€");
+                else
+                    Console.WriteLine("x - существенна€ переменна€");
+                if (str[0] == str[1] && str[2] == str[3])
+                    Console.WriteLine("y - фиктивна€ переменна€");
+                else
+                    Console.WriteLine("y - существенна€ переменна€");
+                if ((str[0] == str[2] && str[1] == str[3]) && (str[0] == str[1] && str[2] == str[3]))
+                    Console.WriteLine("‘ункци€ состоит из фиктивных переменных");
+                else if (str[0] == str[2] && str[1] == str[3])
+                {
+                    Console.WriteLine("¬ектор значений функции, не содержащей фиктивных переменных:");
+                    Console.Write($"{str[2]}{str[3]}");
+                }
+                else if (str[0] == str[1] && str[2] == str[3])
+                {
+                    Console.WriteLine("¬ектор значений функции, не содержащей фиктивных переменных:");
+                    Console.Write($"{str[1]}{str[3]}");
+                }
+                else
+                {
+                    Console.WriteLine("¬ектор значений функции, не содержащей фиктивных переменных:");
+                    Console.Write(str);
+                }
+            }
+            else if (n == 3)
+            {
+                int s1 = 0, s2 = 0, s3 = 0;
+                for (int i = 0; i < N / 2; i++)
+                    if (str[i] == str[i + 4])
+                        s1++;
+                for (int i = 0; i < 2; i++)
+                    if (str[i] == str[i + 2])
+                        s2++;
+                for (int i = 4; i < 6; i++)
+                    if (str[i] == str[i + 2])
+                        s2++;
+                for (int i = 0; i < N - 1; i = i + 2)
+                    if (str[i] == str[i + 1])
+                        s3++;
+                if (s1 == 4)
+                {
+                    Console.WriteLine("x - фиктивна€ переменна€");
+                    str = str.Remove(0, 4);
+                }
+                else
+                    Console.WriteLine("x - существенна€ переменна€");
+                if (s2 == 4)
+                {
+                    Console.WriteLine("y - фиктивна€ переменна€");
+                    if (str.Length == 8)
+                    {
+                        str = str.Remove(0, 2);
+                        str = str.Remove(2, 2);
+                    }
+                    else
+                        str = str.Remove(0, 2);
+                }
+                else
+                    Console.WriteLine("y - существенна€ переменна€");
+                if (s3 == 4)
+                {
+                    Console.WriteLine("z - фиктивна€ переменна€");
+                    if (str.Length == 8)
+                    {
+                        str = str.Remove(0, 1);
+                        str = str.Remove(1, 1);
+                        str = str.Remove(2, 1);
+                        str = str.Remove(3, 1);
+                    }
+                    else if (str.Length == 4)
+                    {
+                        str = str.Remove(0, 1);
+                        str = str.Remove(1, 1);
+                    }
+                    else if (str.Length == 2)
+                        str = str.Remove(0, 1);
+                }
+                else
+                    Console.WriteLine("z - существенна€ переменна€");
+                Console.WriteLine("¬ектор значений функции, не содержащей фиктивных переменных:");
+                Console.Write(str);
+            }
+            else if (n == 4)
+            {
+                int s1 = 0, s2 = 0, s3 = 0, s4 = 0;
+                for (int i = 0; i < N / 2; i++)
+                    if (str[i] == str[i + 8])
+                        s1++;
+                for (int i = 0; i < N - 4; i++)
+                {
+                    if (str[i] == str[i + 4])
+                        s2++;
+                    if (i == 3)
+                        i = i + 4;
+                }
+                for (int i = 0; i < N - 2; i++)
+                {
+                    if (str[i] == str[i + 2])
+                        s3++;
+                    if (i % 2 == 1)
+                        i = i + 2;
+                }
+                for (int i = 0; i < N - 1; i = i + 2)
+                    if (str[i] == str[i + 1])
+                        s4++;
+                if (s1 == 8)
+                {
+                    Console.WriteLine("A - фиктивна€ переменна€");
+                    str = str.Remove(0, 8);
+                }
+                else
+                    Console.WriteLine("A - существенна€ переменна€");
+                if (s2 == 8)
+                {
+                    Console.WriteLine("B - фиктивна€ переменна€");
+                    if (str.Length == 16)
+                    {
+                        str = str.Remove(0, 4);
+                        str = str.Remove(4, 4);
+                    }
+                    else
+                        str = str.Remove(0, 4);
+                }
+                else
+                    Console.WriteLine("B - существенна€ переменна€");
+                if (s3 == 8)
+                {
+                    Console.WriteLine("C - фиктивна€ переменна€");
+                    if (str.Length == 16)
+                    {
+                        str = str.Remove(0, 2);
+                        str = str.Remove(2, 2);
+                        str = str.Remove(4, 2);
+                        str = str.Remove(6, 2);
+                    }
+                    else if (str.Length == 8)
+                    {
+                        str = str.Remove(0, 2);
+                        str = str.Remove(2, 2);
+                    }
+                    else if (str.Length == 4)
+                        str = str.Remove(0, 2);
+                }
+                else
+                    Console.WriteLine("C - существенна€ переменна€");
+                if (s4 == 8)
+                {
+                    Console.WriteLine("D - фиктивна€ переменна€");
+                    if (str.Length == 16)
+                    {
+                        str = str.Remove(0, 1);
+                        str = str.Remove(1, 1);
+                        str = str.Remove(2, 1);
+                        str = str.Remove(3, 1);
+                        str = str.Remove(4, 1);
+                        str = str.Remove(5, 1);
+                        str = str.Remove(6, 1);
+                        str = str.Remove(7, 1);
+                    }
+                    else if (str.Length == 8)
+                    {
+                        str = str.Remove(0, 1);
+                        str = str.Remove(1, 1);
+                        str = str.Remove(2, 1);
+                        str = str.Remove(3, 1);
+                    }
+                    else if (str.Length == 4)
+                    {
+                        str = str.Remove(0, 1);
+                        str = str.Remove(1, 1);
+                    }
+                    else if (str.Length == 2)
+                        str = str.Remove(0, 1);
+                }
+                else
+                    Console.WriteLine("D - существенна€ переменна€");
+                Console.WriteLine("¬ектор значений функции, не содержащей фиктивных переменных:");
+                Console.Write(str);
+            }
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,196 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <iomanip>
+#include <map>
+#include <conio.h>
+#include <stdlib.h>
+#include <vector>
+#include <fstream>
+#include <stdio.h>
+
+using namespace std;
+
+void vizZ() {
+	cout << "Главное меню" << endl << endl;
+	cout << "1. Выдать список НОМЕРОВ АВТОМОБИЛЕЙ, остановленных данным СОТРУДНИКОМ." << endl;
+	cout << "2. Выдать список НОМЕРОВ АВТОМОБИЛЕЙ, нарушивших на данном УЧАСТКЕ." << endl;
+	cout << "3. Выдать список СОТРУДНИКОВ, работающих на данном УЧАСТКЕ в определенный день. В определенный день каждый сотрудник работает только на одном участке." << endl;
+	cout << "4. Выдать список ВОДИТЕЛЕЙ, остановленных данным СОТРУДНИКОМ на данном УЧАСТКЕ В определенный день." << endl;
+	cout << "5. Выдать список СОТРУДНИКОВ, закрепленных на данном УЧАСТКЕ, отправленных на повышение квалификации в данный ГОРОД. Сотрудник может быть закреплен только на одном участке." << endl;
+	cout << "6. Выдать список ВОДИТЕЛЕЙ, задержанных на данном УЧАСТКЕ в данном ГОРОДЕ в определенный момент. В определенный момент водитель может быть задержан на одном участке." << endl;
+	cout << "7. Выдать список УЧАСТКОВ, находящихся в данном ГОРОДЕ." << endl;
+	cout << "8. Выдать список УЧАСТКОВ, на которых останавливали данного ВОДИТЕЛЯ в данном ГОРОДЕ." << endl;
+	cout << "9. Выдать список СОТРУДНИКОВ, задерживавших автомобиль с данным АВТОМОБИЛЬНЫМ НОМЕРОМ в данном ГОРОДЕ." << endl;
+	cout << "10. Выдать список ГОРОДОВ, в которых данного ВОДИТЕЛЯ задерживали на данном УЧАСТКЕ." << endl;
+	cout << "0. Выход из программы" << endl << endl;
+	cout << "Введите номер запроса" << endl;
+}
+
+void ffail() {
+	int count;
+	struct zapros
+	{
+		string name;
+		int len;
+	};
+	zapros* Zapros = new zapros[10];/*
+	ae_int_t n;
+	n = f.length();
+	alglib_impl::ae_state_init(&_alglib_env_state);
+	try
+	{
+		double result = alglib_impl::polynomialcalceqdist(a, b, const_cast<alglib_impl::ae_vector*>(f.c_ptr()), n, t, &_alglib_env_state);
+		alglib_impl::ae_state_clear(&_alglib_env_state);
+		return *(reinterpret_cast<double*>(&result));
+	}
+	catch (alglib_impl::ae_error_type)
+	{
+		throw ap_error(_alglib_env_state.error_msg);
+	}
+	catch (...)
+	{
+		throw;
+	}*/
+	dop();
+}
+
+void dop() {
+	vector<vector<int>> vec;
+	vector<vector<int>>::iterator i = vec.begin();/*vector<bool> newArray;
+	for (int i = 0; i < universum.size(); i++) {
+		if (IsContain(universum[i], item)) {
+			newArray.push_back(true);
+		}
+		else {
+			newArray.push_back(false);
+		}
+	}
+	return newArray;*/i = vec.end();
+}
+
+void input() {
+	double c;
+	double s;	
+	c = 0;
+	s = 1;
+	double* mas = new double[10];/*alglib_impl::ae_state _alglib_env_state;
+	ae_int_t n;
+	n = a.length();
+	vector<bool> newArray;
+	for (int i = 0; i < universum.size(); i++) {
+		if (IsContain(universum[i], item)) {
+			newArray.push_back(true);
+		}
+		else {
+			newArray.push_back(false);
+		}
+	}
+	alglib_impl::ae_state_init(&_alglib_env_state);
+	try
+	{
+		alglib_impl::polynomialpow2bar(const_cast<alglib_impl::ae_vector*>(a.c_ptr()), n, c, s, const_cast<alglib_impl::barycentricinterpolant*>(p.c_ptr()), &_alglib_env_state);
+		alglib_impl::ae_state_clear(&_alglib_env_state);
+		return;
+	}
+	catch (alglib_impl::ae_error_type)
+	{
+		throw ap_error(_alglib_env_state.error_msg);
+	}
+	catch (...)
+	{
+		throw;
+	}*/mas = { 0 };
+	cout << endl;
+}
+
+void rez() {
+	int command = -1;
+	while (command != 0)
+	{
+		cin >> command;
+		ffail();
+		switch (command)
+		{
+		case 1:
+		{
+			cout << "Иванов" << endl << endl << "1. а023кс" << endl << "2. м263вт" << endl << "3. р888рм" << endl << "4. с912ан" << endl << endl;
+			cout << "Смирнов" << endl << endl << "1. в538нк" << endl << "2. р834ту" << endl << endl;
+			cout << "Березин" << endl << endl << "1. е936см" << endl << "2. т165вв" << endl << "3. м579то" << endl << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "Участок 1" << endl << endl << "1. р834ту" << endl << "2. к729мт" << endl << "3. е777ее" << endl << endl;
+			cout << "Участок 2" << endl << endl << "1. о693вт" << endl << "2. к491оа" << endl << endl;
+			break;
+		}
+		case 3:
+		{
+			cout << "Участок 1" << endl << endl << "1. Новиков" << endl << "2. Васильев" << endl << "3. Соколов" << endl << endl;
+			cout << "Участок 2" << endl << endl << "1. Петров" << endl << "2. Михайлов" << endl << "3. Кузнецов" << endl << endl;
+			break;
+		}
+		case 4:
+		{
+			cout << "Участок 1" << endl << endl << "Сотрудник Кожевников" << endl << endl << "Перевощиков" << endl << "Путин" << endl << endl;
+			cout << "Участок 2" << endl << endl << "Сотрудник Данилов" << endl << endl << "Кузьмин" << endl << "Еремин" << endl << "Афанасьев" << endl << endl;
+			break;
+		}
+		case 5:
+		{
+			cout << "Участок 1" << endl << endl << "Екатеринбург" << endl << endl << "Максимов" << endl << "Ведерников" << endl << "Орлов" << endl << endl;
+			cout << "Участок 2" << endl << endl << "Казань" << endl << endl << "Афанасьев" << endl << "Харламов" << endl << endl;
+			cout << "Участок 3" << endl << endl << "Москва" << endl << endl << "Белов" << endl << "Ершов" << endl << endl;
+			break;
+		}
+		case 6:
+		{
+			cout << "Санкт-Петербург" << endl << endl << "участок 1" << endl << endl << "Кутявин" << endl << "Ялышев" << endl << "Овчинников" << endl << endl;
+			cout << "Санкт-Петербург" << endl << endl << "участок 2" << endl << endl << "Ялышев" << endl << "Царев" << endl << "Хохряков" << endl << endl;
+			cout << "Рязань" << endl << endl << "участок 1" << endl << endl << "Самсонов" << endl << "Глебова" << endl << endl;
+			break;
+		}
+		case 7:
+		{
+			cout << "Москва" << endl << endl << "участок 1" << endl << endl << "Участок 2" << endl << "Участок 3" << endl << "Участок 4" << endl << "Участок 5" << endl << "Участок 6" << endl << "Участок 7" << endl << endl;
+			cout << "Сочи" << endl << endl << "участок 1" << endl << endl << "Участок 2" << endl << "Участок 3" << endl << "Участок 4" << endl << endl;
+			cout << "Пенза" << endl << endl << "участок 1" << endl << endl << "Участок 2" << endl << endl;
+			break;
+		}
+		case 8:
+		{
+			cout << "Пермь" << endl << endl << "Белоусов" << endl << endl << "Участок 1" << endl << "Участок 3" << endl << endl;
+			cout << "Пермь" << endl << endl << "Григорьев" << endl << endl << "Участок 3" << endl << "Участок 4" << endl << endl;
+			break;
+		}
+		case 9:
+		{
+			cout << "Воронеж" << endl << endl << "в538нк" << endl << endl << "Гогунский" << endl << "Пушин" << endl << "Фролов" << endl << endl;
+			cout << "Челябинск" << endl << endl << "к491оа" << endl << endl << "Морозов" << endl << "Калинин" << endl << endl;
+			cout << "Челябинск" << endl << endl << "с912ан" << endl << endl << "Калинин" << endl << "Гришин" << endl << endl;
+			break;
+		}
+		case 10:
+		{
+			cout << "Карпов" << endl << endl << "участок 2" << endl << endl << "Краснодар" << endl << "Новосибирск" << endl << "Владивосток" << endl << endl;
+			cout << "Логинов" << endl << endl << "участок 5" << endl << endl << "Самара" << endl << "Ярославль" << endl << "Калининград" << endl << endl;
+			cout << "Антонов" << endl << endl << "участок 3" << endl << endl << "Ижевск" << endl << "Уфа" << endl << endl;
+			break;
+		}
+		default:
+			break;
+			cout << "Введите команду" << endl;
+		}
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	vizZ();
+	input();
+	rez();
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,11 @@
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\bin\Debug\GeometryPainting.exe.config
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\bin\Debug\GeometryPainting.exe
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\bin\Debug\GeometryPainting.pdb
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\bin\Debug\ClassLibrary.dll
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\bin\Debug\ClassLibrary.pdb
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.Properties.Resources.resources
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.csproj.GenerateResource.cache
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.exe
+C:\Учеба\2 курс\Курсы C#\256 оттенков серого\obj\Debug\GeometryPainting.pdb

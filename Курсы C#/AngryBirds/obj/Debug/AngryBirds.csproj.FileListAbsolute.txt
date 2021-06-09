@@ -1,0 +1,8 @@
+C:\Учеба\2 курс\Курсы C#\bin\Debug\AngryBirds.exe.config
+C:\Учеба\2 курс\Курсы C#\bin\Debug\AngryBirds.exe
+C:\Учеба\2 курс\Курсы C#\bin\Debug\AngryBirds.pdb
+C:\Учеба\2 курс\Курсы C#\bin\Debug\TestingRoom.dll
+C:\Учеба\2 курс\Курсы C#\obj\Debug\AngryBirds.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\obj\Debug\AngryBirds.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\obj\Debug\AngryBirds.exe
+C:\Учеба\2 курс\Курсы C#\obj\Debug\AngryBirds.pdb

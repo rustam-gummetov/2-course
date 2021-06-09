@@ -1,0 +1,555 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Threading;
+
+namespace ConsoleApp17
+{
+    [DataContract]
+    public class Person
+    {        
+        [DataMember]
+        public string FirstName { get; set; }
+        [DataMember]
+        public string LastName { get; set; }
+        [DataMember]
+        public string MiddleName { get; set; }
+        [DataMember]
+        public int Age { get; set; }
+        public virtual void GetAllEmployees() { }
+    }
+
+    [DataContract]
+    public class WorkSchedule : Person
+    {
+        [DataMember]
+        public string WorkingDays { get; set; }
+        [DataMember]
+        public string WorkingHours { get; set; }
+    }
+
+    [DataContract]
+    public class Employee : Person
+    {
+        static public List<Employee> employees = new List<Employee>();
+        static public List<WorkSchedule> shedule = new List<WorkSchedule>();
+
+        public string Position { get; set; }
+        public int Salary { get; set; }
+        //public WorkSchedule Schedule;
+        public int DelayCount { get; set; }
+        public int CompensatoryTimeCount { get; set; }
+        public int SickDayCount { get; set; }
+        public int VacationCount { get; set; }
+        public List<string> CaseHistory;
+
+        public override void GetAllEmployees()
+        {
+            Console.Clear();
+            Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10} {4, 15}", "Фамилия", "Имя", "Отчество", "Возраст", "Должность");
+            foreach (var employee in employees)
+            {
+                Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10} {4, 15}", employee.LastName, employee.FirstName, employee.MiddleName, employee.Age, employee.Position);
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void GetEmployeesByPosition()
+        {
+            Console.Clear();
+            Console.WriteLine("Выберите должность работников, которых вывести на экран:");
+            var position = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10}", "Фамилия", "Имя", "Отчество", "Возраст");
+            var employeesCount = 0;
+            foreach (var employee in employees)
+            {
+                if (employee.Position == position)
+                {
+                    employeesCount++;
+                    Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10}", employee.LastName, employee.FirstName, employee.MiddleName, employee.Age);
+                }
+            }
+            if (employeesCount == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("Работников с такой должностью не найдено");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void GetShedule()
+        {
+            Console.Clear();
+            Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 15} {4, 15}", "Фамилия", "Имя", "Отчество", "Дни работы", "Время работы");
+            foreach (var employee in shedule)
+            {
+                Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 15} {4, 15}", employee.LastName, employee.FirstName, employee.MiddleName, employee.WorkingDays, employee.WorkingHours);
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void GetSalary()
+        {
+            Console.Clear();
+            Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10}", "Фамилия", "Имя", "Отчество", "Зарплата");
+            foreach (var employee in employees)
+            {
+                Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 10}", employee.LastName, employee.FirstName, employee.MiddleName, employee.Salary);
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void SetDisease()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach(var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите название болезни");
+                    var disease = Console.ReadLine();
+                    employee.CaseHistory.Add(disease);
+                    Console.Clear();
+                    Console.WriteLine("Болезнь успешно добавлена");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void GetDisease()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine(employee.LastName + " " + employee.FirstName + " " + employee.MiddleName);
+                    Console.WriteLine("\nИстория болезни:");
+                    for (int i = 0; i < employee.CaseHistory.Count; i++)
+                    {
+                        Console.WriteLine(employee.CaseHistory[i]);
+                    }
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void ChangeShedule()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in shedule)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите дни работы:");
+                    var workingDays = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("Введите часы работы:");
+                    var workingHours = Console.ReadLine();
+                    Console.Clear();
+                    employee.WorkingDays = workingDays;
+                    employee.WorkingHours = workingHours;
+                    Console.WriteLine("График работы добавлен");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void GetDelayCompensatorySickVacation()
+        {
+            Console.Clear();
+            Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 18} {4, 20} {5, 20} {6, 20}", "Фамилия", "Имя", "Отчество", "Кол-во опозданий", "Кол-во отгулов", "Кол-во больничных", "Отпуск (дней)");
+            foreach (var employee in employees)
+            {
+                Console.WriteLine("{0, -20} {1, 10} {2, 15} {3, 18} {4, 20} {5, 20} {6, 20}", employee.LastName, employee.FirstName, employee.MiddleName, employee.DelayCount, employee.CompensatoryTimeCount, employee.SickDayCount, employee.VacationCount);
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void ChangeDelay()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите число опозданий:");
+                    var delayCount = 0;
+                    do
+                    {
+                        delayCount = Convert.ToInt32(Console.ReadLine());
+                    } while (delayCount < 0);
+                    employee.DelayCount = delayCount;
+                    Console.Clear();
+                    Console.WriteLine("Число опозданий изменено");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void ChangeCompensatory()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите число отгулов:");
+                    var сompensatoryCount = 0;
+                    do
+                    {
+                        сompensatoryCount = Convert.ToInt32(Console.ReadLine());
+                    } while (сompensatoryCount < 0);
+                    employee.CompensatoryTimeCount = сompensatoryCount;
+                    Console.Clear();
+                    Console.WriteLine("Число отгулов изменено");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void Sick()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите число больничных:");
+                    var sickCount = 0;
+                    do
+                    {
+                        sickCount = Convert.ToInt32(Console.ReadLine());
+                    } while (sickCount < 0);
+                    employee.SickDayCount = sickCount;
+                    Console.Clear();
+                    Console.WriteLine("Число больничных изменено");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        public void Vacation()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите фамилию работника");
+            var lastName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите имя работника");
+            var firstName = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Введите отчество работника");
+            var middleName = Console.ReadLine();
+            Console.Clear();
+            var findEmployee = false;
+            foreach (var employee in employees)
+            {
+                if (employee.LastName == lastName && employee.FirstName == firstName && employee.MiddleName == middleName)
+                {
+                    findEmployee = true;
+                    Console.WriteLine("Введите число отпускных дней:");
+                    var vacationCount = 0;
+                    do
+                    {
+                        vacationCount = Convert.ToInt32(Console.ReadLine());
+                    } while (vacationCount < 0);
+                    employee.VacationCount = vacationCount;
+                    Console.Clear();
+                    Console.WriteLine("Число отпускных дней изменено");
+                }
+            }
+            if (!findEmployee)
+            {
+                Console.WriteLine("Такой работник не найден");
+            }
+            Console.WriteLine("\nНажмите любую клавишу, чтобы вернуться в меню");
+            Console.ReadKey();
+            Console.Clear();
+            Menu();
+        }
+
+        static public void Menu()
+        {
+            Console.WriteLine("1. Список всех работников");
+            Console.WriteLine("2. Список работников по должностям");
+            Console.WriteLine("3. Список работников с графиком работы");
+            Console.WriteLine("4. Список работников с заработными платами");
+            Console.WriteLine("5. Добавить болезнь в историю болезни работника");
+            Console.WriteLine("6. Посмотреть историю болезни");
+            Console.WriteLine("7. Изменить график работы заданного работника");
+            Console.WriteLine("8. Список опозданий, отгулов, больничных, отпусков");
+            Console.WriteLine("9. Изменить количество опозданий");
+            Console.WriteLine("10. Изменить количество отгулов");
+            Console.WriteLine("11. Изменить количество больничных");
+            Console.WriteLine("12. Изменить количество отпусков");
+            Console.WriteLine("0. Выход");
+            var employee = new Employee();
+            var command = Convert.ToInt32(Console.ReadLine());
+            switch (command)
+            {
+                case 1:
+                    {                       
+                        employee.GetAllEmployees();
+                        break;
+                    }
+                case 2:
+                    {
+                        employee.GetEmployeesByPosition();
+                        break;
+                    }
+                case 3:
+                    {
+                        employee.GetShedule();
+                        break;
+                    }
+                case 4:
+                    {
+                        employee.GetSalary();
+                        break;
+                    }
+                case 5:
+                    {
+                        employee.SetDisease();
+                        break;
+                    }
+                case 6:
+                    {
+                        employee.GetDisease();
+                        break;
+                    }
+                case 7:
+                    {
+                        employee.ChangeShedule();
+                        break;
+                    }
+                case 8:
+                    {
+                        employee.GetDelayCompensatorySickVacation();
+                        break;
+                    }
+                case 9:
+                    {
+                        employee.ChangeDelay();
+                        break;
+                    }
+                case 10:
+                    {
+                        employee.ChangeCompensatory();
+                        break;
+                    }
+                case 11:
+                    {
+                        employee.Sick();
+                        break;
+                    }
+                case 12:
+                    {
+                        employee.Vacation();
+                        break;
+                    }
+            }
+        }
+    }
+
+    class Program
+    {
+        static XmlSerializer xmlFormatter = new XmlSerializer(typeof(List<Employee>));
+        static DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<WorkSchedule>));
+
+        static public void Serialization()
+        {
+            using (var file = new FileStream("employees.xml", FileMode.OpenOrCreate))
+            {
+                xmlFormatter.Serialize(file, Employee.employees);
+            }
+
+            using (var shedule = new FileStream("shedule.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(shedule, Employee.shedule);
+            }
+        }
+
+        static public void Deserialization()
+        {
+            using (var file = new FileStream("employees.xml", FileMode.OpenOrCreate))
+            {
+                Employee.employees = xmlFormatter.Deserialize(file) as List<Employee>;
+            }
+
+            using (var shedule = new FileStream("shedule.json", FileMode.OpenOrCreate))
+            {
+                Employee.shedule = jsonFormatter.ReadObject(shedule) as List<WorkSchedule>;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Deserialization();
+
+            #region
+            //var employee = new Employee();
+            //employee.LastName = "Александров"; employee.FirstName = "Александр"; employee.MiddleName = "Александрович";
+            //employee.Age = 35; employee.Position = "Бухгалтер"; employee.Salary = 40000; employee.DelayCount = 2; employee.CompensatoryTimeCount = 1;
+            //employee.SickDayCount = 2; employee.VacationCount = 30;
+            //var shedule = new WorkSchedule() { WorkingDays = "Пн-пт", WorkingHours = "9:00-17:00" };
+            //employee.Schedule = shedule;
+            #endregion
+            //employee.Schedule.WorkingDays = "Пн-пт"; employee.Schedule.WorkingHours = "9:00-17:00";
+
+            //Employee.employees.Add(employee);
+
+            #region
+            //var person1 = new WorkSchedule() { LastName = "Александров", FirstName = "Александр", MiddleName = "Александрович", Age = 35, WorkingDays = "Пн-пт", WorkingHours = "9:00-17:00" };
+            //Employee.shedule.Add(person1);
+            //var person2 = new WorkSchedule() { LastName = "Владимиров", FirstName = "Владимир", MiddleName = "Владимирович", Age = 48, WorkingDays = "Пн-чт", WorkingHours = "9:00-17:00" };
+            //Employee.shedule.Add(person2);
+            //var person3 = new WorkSchedule() { LastName = "Дмитриев", FirstName = "Дмитрий", MiddleName = "Дмитриевич", Age = 30, WorkingDays = "Пн, Ст", WorkingHours = "12:00-17:00" };
+            //Employee.shedule.Add(person3);
+            //var person4 = new WorkSchedule() { LastName = "Иванова", FirstName = "Мария", MiddleName = "Николаевна", Age = 28, WorkingDays = "Пн-пт", WorkingHours = "9:00-15:00" };
+            //Employee.shedule.Add(person4);
+            //var person5 = new WorkSchedule() { LastName = "Геннадьев", FirstName = "Геннадий", MiddleName = "Геннадьевич", Age = 53, WorkingDays = "Пн, Ср, Пт", WorkingHours = "9:00-17:00" };
+            //Employee.shedule.Add(person5);
+            //var person6 = new WorkSchedule() { LastName = "Николаев", FirstName = "Николай", MiddleName = "Николаевич", Age = 31, WorkingDays = "Пн-пт", WorkingHours = "10:00-16:00" };
+            //Employee.shedule.Add(person6);
+            //var person7 = new WorkSchedule() { LastName = "Савина", FirstName = "Елена", MiddleName = "Григорьевна", Age = 60, WorkingDays = "Вт, Чт", WorkingHours = "15:00-18:00" };
+            //Employee.shedule.Add(person7);
+            //var person8 = new WorkSchedule() { LastName = "Петрова", FirstName = "Светлана", MiddleName = "Викторовна", Age = 30, WorkingDays = "Пн, Чт", WorkingHours = "9:00-15:00" };
+            //Employee.shedule.Add(person8);
+            //var person9 = new WorkSchedule() { LastName = "Михайлов", FirstName = "Михаил", MiddleName = "Михайлович", Age = 42, WorkingDays = "Пн-пт", WorkingHours = "10:00-18:00" };
+            //Employee.shedule.Add(person9);
+            //var person10 = new WorkSchedule() { LastName = "Васильев", FirstName = "Василий", MiddleName = "Васильевич", Age = 26, WorkingDays = "Вн Пт", WorkingHours = "10:00-16:00" };
+            //Employee.shedule.Add(person10);
+            #endregion
+
+            Employee.Menu();
+            Serialization();
+        }
+    }
+}

@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        var tabl = new char[,]
+        {
+            {'E', 'E', 'E', 'E', '2', '4', 'E', '6' },
+            {'E', 'E', 'E', 'E', 'E', 'E', 'E', '3' },
+            {'E', 'E', 'E', '4', 'E', 'E', '4', 'E' },
+            {'E', 'E', '5', 'E', 'E', 'b', 'E', 'E' },
+            {'1', 'E', 'E', 'E', 'E', 'E', 'E', 'b' },
+            {'E', 'a', 'E', 'E', '7', '7', 'E', 'E' },
+            {'E','E','E','E','E', '8', 'E','E' },
+            {'E', '9', 'E','E','E','E','E','E' },
+            {'E','E','E', 'b', 'E','E','E','E' },
+            {'E','E','E','E','E','E','E', '9' },
+            {'E','E','E','E','E','E','E','E' },
+            {'E','E','E','E','E','E','E','E' }
+        };
+        string inputStr;
+        inputStr = Console.ReadLine();
+        var num = new Queue<int>();
+        bool f = true;
+        int i = 1, j;
+        while (true)
+        {
+            if (i >= inputStr.Length) break;
+            j = Convert.ToInt32(inputStr[i]); 
+            i += 2;
+            num.Enqueue(j - '0');
+            j = 0;
+        }
+        j = 0;
+        i = 0;
+        int numCount = num.Count;
+        while (num.Count > 0 && f)
+        {
+            int number = num.Dequeue();
+            if (tabl[j, number] == 'E') { f = false; continue; }
+            if (tabl[j, number] == 'a') j = 9;
+            else if (tabl[j, number] == 'b') j = 10;
+            else j = Convert.ToInt32((tabl[j, number]) - 1) - '0';
+            i++;
+        }
+        if (i >= numCount - 1) Console.WriteLine("Цепочка допустима");
+        else Console.WriteLine("Цепочка не допустима");
+    }
+}

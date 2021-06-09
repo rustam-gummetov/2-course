@@ -1,0 +1,6 @@
+C:\Учеба\2 курс\Курсы C#\DragonFractal\bin\Debug\DragonFractal.exe.config
+C:\Учеба\2 курс\Курсы C#\DragonFractal\bin\Debug\DragonFractal.exe
+C:\Учеба\2 курс\Курсы C#\DragonFractal\bin\Debug\DragonFractal.pdb
+C:\Учеба\2 курс\Курсы C#\DragonFractal\obj\Debug\DragonFractal.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\DragonFractal\obj\Debug\DragonFractal.exe
+C:\Учеба\2 курс\Курсы C#\DragonFractal\obj\Debug\DragonFractal.pdb

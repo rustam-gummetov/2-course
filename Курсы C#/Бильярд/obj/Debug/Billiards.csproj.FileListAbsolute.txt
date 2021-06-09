@@ -1,0 +1,8 @@
+C:\Учеба\2 курс\Курсы C#\Бильярд\bin\Debug\Billiards.exe.config
+C:\Учеба\2 курс\Курсы C#\Бильярд\bin\Debug\Billiards.exe
+C:\Учеба\2 курс\Курсы C#\Бильярд\bin\Debug\Billiards.pdb
+C:\Учеба\2 курс\Курсы C#\Бильярд\bin\Debug\TestingRoom.dll
+C:\Учеба\2 курс\Курсы C#\Бильярд\obj\Debug\Billiards.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Бильярд\obj\Debug\Billiards.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Бильярд\obj\Debug\Billiards.exe
+C:\Учеба\2 курс\Курсы C#\Бильярд\obj\Debug\Billiards.pdb

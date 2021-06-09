@@ -1,0 +1,8 @@
+C:\Учеба\2 курс\Курсы C#\Distanse\bin\Debug\Distance.exe.config
+C:\Учеба\2 курс\Курсы C#\Distanse\bin\Debug\Distance.exe
+C:\Учеба\2 курс\Курсы C#\Distanse\bin\Debug\Distance.pdb
+C:\Учеба\2 курс\Курсы C#\Distanse\bin\Debug\TestingRoom.dll
+C:\Учеба\2 курс\Курсы C#\Distanse\obj\Debug\Distance.csprojAssemblyReference.cache
+C:\Учеба\2 курс\Курсы C#\Distanse\obj\Debug\Distance.csproj.CopyComplete
+C:\Учеба\2 курс\Курсы C#\Distanse\obj\Debug\Distance.exe
+C:\Учеба\2 курс\Курсы C#\Distanse\obj\Debug\Distance.pdb

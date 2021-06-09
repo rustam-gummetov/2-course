@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <FirstName>Александр</FirstName>
+    <LastName>Александров</LastName>
+    <MiddleName>Александрович</MiddleName>
+    <Age>35</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн-пт</WorkingDays>
+      <WorkingHours>9:00-17:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Бухгалтер</Position>
+    <Salary>40000</Salary>
+    <DelayCount>2</DelayCount>
+    <CompensatoryTimeCount>1</CompensatoryTimeCount>
+    <SickDayCount>2</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Владимир</FirstName>
+    <LastName>Владимиров</LastName>
+    <MiddleName>Владимирович</MiddleName>
+    <Age>48</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн-чт</WorkingDays>
+      <WorkingHours>9:00-17:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Врач</Position>
+    <Salary>35000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>4</CompensatoryTimeCount>
+    <SickDayCount>5</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Дмитрий</FirstName>
+    <LastName>Дмитриев</LastName>
+    <MiddleName>Дмитриевич</MiddleName>
+    <Age>30</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн, Ср</WorkingDays>
+      <WorkingHours>12:00-17:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Санитар</Position>
+    <Salary>20000</Salary>
+    <DelayCount>4</DelayCount>
+    <CompensatoryTimeCount>1</CompensatoryTimeCount>
+    <SickDayCount>0</SickDayCount>
+    <VacationCount>15</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Мария</FirstName>
+    <LastName>Иванова</LastName>
+    <MiddleName>Николаевна</MiddleName>
+    <Age>28</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн-пт</WorkingDays>
+      <WorkingHours>9:00-15:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Медсестра</Position>
+    <Salary>25000</Salary>
+    <DelayCount>0</DelayCount>
+    <CompensatoryTimeCount>2</CompensatoryTimeCount>
+    <SickDayCount>7</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Геннадий</FirstName>
+    <LastName>Геннадьев</LastName>
+    <MiddleName>Геннадьевич</MiddleName>
+    <Age>53</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн, Ср, Пт</WorkingDays>
+      <WorkingHours>9:00-17:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Врач</Position>
+    <Salary>35000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>5</CompensatoryTimeCount>
+    <SickDayCount>1</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Николай</FirstName>
+    <LastName>Николаев</LastName>
+    <MiddleName>Николаевич</MiddleName>
+    <Age>31</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн-пт</WorkingDays>
+      <WorkingHours>10:00-16:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Врач</Position>
+    <Salary>45000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>6</CompensatoryTimeCount>
+    <SickDayCount>0</SickDayCount>
+    <VacationCount>20</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Елена</FirstName>
+    <LastName>Савина</LastName>
+    <MiddleName>Григорьевна</MiddleName>
+    <Age>60</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Вт, Чт</WorkingDays>
+      <WorkingHours>15:00-18:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Уборщица</Position>
+    <Salary>12000</Salary>
+    <DelayCount>2</DelayCount>
+    <CompensatoryTimeCount>0</CompensatoryTimeCount>
+    <SickDayCount>1</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Светлана</FirstName>
+    <LastName>Петрова</LastName>
+    <MiddleName>Викторовна</MiddleName>
+    <Age>30</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн, Чт</WorkingDays>
+      <WorkingHours>9:00-15:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Медсестра</Position>
+    <Salary>25000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>3</CompensatoryTimeCount>
+    <SickDayCount>1</SickDayCount>
+    <VacationCount>20</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Михаил</FirstName>
+    <LastName>Михайлов</LastName>
+    <MiddleName>Михайлович</MiddleName>
+    <Age>42</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Пн-пт</WorkingDays>
+      <WorkingHours>10:00-18:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Врач</Position>
+    <Salary>50000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>1</CompensatoryTimeCount>
+    <SickDayCount>2</SickDayCount>
+    <VacationCount>30</VacationCount>
+  </Employee>
+  <Employee>
+    <FirstName>Василий</FirstName>
+    <LastName>Васильев</LastName>
+    <MiddleName>Васильевич</MiddleName>
+    <Age>26</Age>
+    <Schedule>
+      <Age>0</Age>
+      <WorkingDays>Вт, Пт</WorkingDays>
+      <WorkingHours>10:00-16:00</WorkingHours>
+    </Schedule>
+    <CaseHistory />
+    <Position>Санитар</Position>
+    <Salary>20000</Salary>
+    <DelayCount>1</DelayCount>
+    <CompensatoryTimeCount>0</CompensatoryTimeCount>
+    <SickDayCount>3</SickDayCount>
+    <VacationCount>20</VacationCount>
+  </Employee>
+</ArrayOfEmployee>
